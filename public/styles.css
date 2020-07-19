@@ -36,6 +36,7 @@ header {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 27px;
+  cursor: pointer;
 }
 .header-bio {
   box-sizing: border-box;
@@ -44,11 +45,14 @@ header {
   margin-bottom: 56px;
   align-items: center;
 }
+a {
+  color: #eb418a;
+}
 .header-bio-image {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  width: 48px;
+  min-width: 48px;
   height: 48px;
   border-radius: 9999%;
   margin-right: 20px;
@@ -89,6 +93,8 @@ footer {
   line-height: 1.1;
   font-weight: 900;
   margin-bottom: 7px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 small {
   font-size: smaller;
@@ -97,4 +103,93 @@ small {
   padding: 0;
   margin: 0;
   margin-bottom: 28px;
+}
+
+/* Blog Post */
+.post {
+  max-width: 672px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-bottom: 56px;
+}
+.post-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+  font-size: 40px;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.1;
+  font-weight: 900;
+}
+.post-date {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+  font-size: 13.32085131842997px;
+  margin-top: -15px;
+  margin-bottom: 28px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  pointer-events: painted;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.1;
+  font-weight: 900;
+}
+p {
+  padding: 2px;
+  margin: 0;
+  margin-bottom: 28px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+  list-style-position: outside;
+  list-style-image: none;
+  margin-left: 28px;
+}
+.blockquote {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+  margin-left: 28px;
+  margin-right: 28px;
+  color: inherit;
+  border-left-color: inherit;
+  opacity: 0.8;
+}
+pre {
+  padding: 28px;
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 85%;
+  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  tab-size: 4;
+  hyphens: none;
+  color: white;
+  background-color: var(--theme-ui-colors-prism-background, #00203a);
+  overflow: auto;
+  border-radius: 10px;
+}
+code {
+  padding: 5px 5px 5px 0px;
+  background-color: var(--theme-ui-colors-prism-background, #00203a);
+}
+hr {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+  border: 0;
+  border-bottom: 1px solid;
+  margin-top: -1px;
+  border-color: var(--theme-ui-colors-muted, hsla(0, 0%, 100%, 0.2));
 }

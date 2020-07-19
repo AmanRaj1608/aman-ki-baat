@@ -1,69 +1,61 @@
-import Head from 'next/head'
+import Header from '../components/Header'
+import Link from 'next/link'
 import matter from 'gray-matter'
 
 
 export default function Index({ posts, title, description, ...props }) {
   return (
     <div>
-      {/* site header and navigation */}
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title></title>
-      </Head>
-
-      <header>
-        <div className="header-block">
-          <div className="header-top">
-            <h1 className="header-title">Aman ki baat</h1>
-            <button>Dark</button>
-          </div>
-          <div className="header-bio">
-            <div className="header-bio-image">
-              <img className="bio-img" src="./static/aman.jpg" />
-            </div>
-            <div>Blog made while learning Next.js <br /> haha </div>
-          </div>
-        </div>
-      </header>
-
+      <Header pageTitle={title} description={description} />
       <div className="main-body">
+        {!posts && <div>No posts! 📝✏ </div>}
         <main>
-          <div>
-            <h2 className="blog-title">First Blog</h2>
-            <small>Aaj ki date</small>
-            <p className="blog-desc">Far far away, behind the word mountains,
-              far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in </p>
-          </div>
-          <div>
-            <h2 className="blog-title">First Blog</h2>
-            <small>Aaj ki date</small>
-            <p className="blog-desc">Far far away, behind the word mountains,
-              far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in </p>
-          </div>
-          <div>
-            <h2 className="blog-title">First Blog</h2>
-            <small>Aaj ki date</small>
-            <p className="blog-desc">Far far away, behind the word mountains,
-              far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in </p>
-          </div>
-          <div>
-            <h2 className="blog-title">First Blog</h2>
-            <small>Aaj ki date</small>
-            <p className="blog-desc">Far far away, behind the word mountains,
-              far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in </p>
-          </div>
+          {posts &&
+            posts.map((post) => {
+              return (
+                <div key={post.slug}>
+                  <Link href={{ pathname: `/post/${post.slug}` }}>
+                    <h2 className="blog-title"><a>{post.frontmatter.title}</a></h2>
+                  </Link>
+                  <small>{post.frontmatter.date}</small>
+                  <p className="blog-desc">{post.markdownBody.substring(0, 100) + '...'}</p>
+                </div>
+              )
+            })}
         </main>
-        <footer>© 2020, Powered by</footer>
+        <footer>© 2020, Created with ❤ by <Link href="/">@AmanRaj1608</Link></footer>
       </div>
-
     </div>
   )
 }
 
 export async function getStaticProps() {
+
+  const posts = ((context) => {
+
+    // console.log(context)
+    const keys = context.keys()
+    const values = keys.map(context)
+    const data = keys.map((key, index) => {
+      let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
+      const value = values[index]
+      const document = matter(value.default)
+      return {
+        frontmatter: document.data,
+        markdownBody: document.content,
+        slug,
+      }
+    })
+    return data
+  })(require.context('../content', true, /\.md$/))
+
+  // console.log(posts)
+
   return {
     props: {
-      title: 'My Title'
-    }
+      posts,
+      title: 'Aman Ki Baat',
+      description: 'Desc',
+    },
   }
 }
