@@ -30,3 +30,7 @@ export default (props) => (
 - UI color change button
 
 When this will be completed, will create a `nextjs-blog-starter`
+
+👋🏻 Bye
+
+![Image](https://i.pinimg.com/originals/c0/53/67/c053673f3712b2fab0b100885ada628c.gif)

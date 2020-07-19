@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import easterEgg from './easterEgg'
 
 const handleClick = (e) => {
   e.preventDefault();
@@ -8,6 +9,7 @@ const handleClick = (e) => {
 }
 
 export default function Layout({ pageTitle, description }) {
+  console.log(easterEgg, "font-family:monospace");
   return (
     <>
       <Head>
@@ -21,22 +23,22 @@ export default function Layout({ pageTitle, description }) {
         <div className="header-block">
           <div className="header-top">
             <Link href="/"><h1 className="header-title">Aman ki baat</h1></Link>
-            
+
             <button onClick={handleClick}>Dark Mode</button>
           </div>
-            <div className="header-bio">
-              <div className="header-bio-image">
-                <img className="bio-img" src="/static/aman.jpg" />
-              </div>
-              <div>
-                Jack of all trades, master of none.
+          <div className="header-bio">
+            <div className="header-bio-image">
+              <img className="bio-img" src="/static/aman.jpg" alt="Profile" />
+            </div>
+            <div>
+              Jack of all trades, master of none.
               <br />
-              Words by <Link href="https://amanraj1608.netlify.app/"><a>Aman Raj</a></Link>  •
-              <Link href="https://twitter.com/amanraj1608"><a> Twitter</a></Link>  •
-              <Link href="https://github.com/AmanRaj1608"><a> GitHub</a></Link>
-              </div>
+              Words by <Link href="//amanraj1608.netlify.app/"><a>Aman Raj</a></Link>  •
+              <Link href="//twitter.com/amanraj1608"><a> Twitter</a></Link>  •
+              <Link href="//github.com/AmanRaj1608"><a> GitHub</a></Link>
             </div>
           </div>
+        </div>
       </header>
     </>
   )

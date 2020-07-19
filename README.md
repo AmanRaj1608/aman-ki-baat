@@ -1,1 +1,11 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+<p align="center"><img src="./demo.png" width="450"></p>
+<h1 align="center">Aman ki baat</h1>
+<p align="center"><b>⚡ Blog page build using NextJS</b>
+
+### Run Locally
+
+- Clone this repository to your local machine
+- Install dependencies `yarn install`
+- Start the application `npm run dev`
+
+#### Live at https://aman-ki-baat.vercel.app/

@@ -193,3 +193,6 @@ hr {
   margin-top: -1px;
   border-color: var(--theme-ui-colors-muted, hsla(0, 0%, 100%, 0.2));
 }
+img {
+  max-width: 80vw;
+}
