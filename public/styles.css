@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+html,
+body {
+  font-family: "Merriweather", "Georgia", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  padding: 0px;
+  margin: 0px;
+  background-color: #1d1b38;
+  color: #f6bed6;
+}
+header {
+  display: block;
+}
+.header-block {
+  max-width: 672px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 56px;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.header-title {
+  padding: 0;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.1;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 27px;
+}
+.header-bio {
+  box-sizing: border-box;
+  min-width: 0;
+  display: flex;
+  margin-bottom: 56px;
+  align-items: center;
+}
+.header-bio-image {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999%;
+  margin-right: 20px;
+}
+.bio-img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 1;
+  transition: opacity 500ms ease 0s;
+}
+.main-body {
+  max-width: 672px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+main {
+  display: block;
+}
+footer {
+  margin-top: 56px;
+  padding-top: 28px;
+}
+.blog-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+  font-size: 27.725793726205858px;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.1;
+  font-weight: 900;
+  margin-bottom: 7px;
+}
+small {
+  font-size: smaller;
+}
+.blog-desc {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 28px;
+}
