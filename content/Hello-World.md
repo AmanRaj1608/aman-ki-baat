@@ -7,8 +7,6 @@ Hello everyone, this my blog page on Aman ki baat. Created this blog webpage tem
 
 This is a nice NextJS blog starter that you can use for your personal blog too. There are lots of [blog starter](https://next-learn-starter.now.sh/) available already. But here I tried extending the basic template to a more advanced blog page.
 
-when I create a new markdown file it creates a new page and automatically adds it just like
-
 For example, I have added some design support for different markdown commands like different heading, `For code sharing`, listing, etc.
 
 Yeah, I know syntax highlighting is not there.
