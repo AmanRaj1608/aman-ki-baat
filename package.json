@@ -10,7 +10,7 @@
   "dependencies": {
     "gray-matter": "^4.0.2",
     "next": "10.0.3",
-    "raw-loader": "^4.0.1",
+    "raw-loader": "^4.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-markdown": "^4.3.1"
