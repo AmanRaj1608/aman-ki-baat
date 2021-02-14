@@ -1,5 +1,5 @@
 ---
-title: "⚡ Why Next.JS"
+title: "Why Next.JS"
 date: "July 19, 2020"
 ---
 

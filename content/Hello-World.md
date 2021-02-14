@@ -1,5 +1,5 @@
 ---
-title: "👋🏻 Hello, world!"
+title: "Hello, world!"
 date: "July 17, 2020"
 ---
 

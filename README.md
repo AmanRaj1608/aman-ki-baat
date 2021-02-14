@@ -2,6 +2,8 @@
 <h1 align="center">Aman ki baat</h1>
 <p align="center"><b>⚡ Blog page build using NextJS</b>
 
+##### Will revamp when get time, looking for alternative like 11ty or gatsby
+
 ### Run Locally
 
 - Clone this repository to your local machine

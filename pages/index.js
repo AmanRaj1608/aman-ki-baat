@@ -1,39 +1,49 @@
-import Header from '../components/Header'
+import React from 'react';
 import Link from 'next/link'
 import matter from 'gray-matter'
 
+import Header from '../components/Header'
 
 export default function Index({ posts, title, description, ...props }) {
   return (
-    <div>
+    <React.Fragment>
+
       <Header pageTitle={title} description={description} />
-      <div className="main-body">
+      <div className="linerGradient"></div>
+
+      <main>
         {!posts && <div>No posts! 📝✏ </div>}
-        <main>
-          {posts &&
-            posts.map((post) => {
-              return (
-                <div key={post.slug}>
-                  <Link href={{ pathname: `/post/${post.slug}` }}>
-                    <h2 className="blog-title"><a>{post.frontmatter.title}</a></h2>
-                  </Link>
-                  <small>{post.frontmatter.date}</small>
-                  <p className="blog-desc">{post.markdownBody.substring(0, 100) + '...'}</p>
-                </div>
-              )
-            })}
-        </main>
-        <footer>© 2020, Created with ❤ by <Link href="/">@AmanRaj1608</Link></footer>
-      </div>
-    </div>
+
+        {posts &&
+          posts.map((post) => {
+            return (
+              <div key={post.slug}>
+                <Link href={{ pathname: `/post/${post.slug}` }}>
+                  <a><h2 className="home__blog__title">{post.frontmatter.title}</h2></a>
+                </Link>
+                <span>
+                  <small className="home__blog__date">{post.frontmatter.date}</small>
+                  {/*<small className="home__blog__minRead">{post.frontmatter.date}</small> */}
+                </span>
+                <p className="home__blog__desc">{post.markdownBody.substring(0, 80)}</p>
+              </div>
+            )
+          })}
+      </main>
+
+      <hr style={{ borderBottom: '3px solid rgb(102 51 153)' }} />
+
+      {/** footer */}
+      <footer className="footer">
+        Created with ❤️ by Aman, © 2021
+      </footer>
+    </React.Fragment>
   )
 }
 
 export async function getStaticProps() {
-
   const posts = ((context) => {
 
-    // console.log(context)
     const keys = context.keys()
     const values = keys.map(context)
     const data = keys.map((key, index) => {
@@ -49,13 +59,11 @@ export async function getStaticProps() {
     return data
   })(require.context('../content', true, /\.md$/))
 
-  // console.log(posts)
-
   return {
     props: {
       posts,
-      title: 'Aman Ki Baat',
-      description: 'Desc',
+      title: 'Home | Aman ki baat',
+      description: 'Personal Blog of Aman Raj who is an Undergraduate Engineering student at IIIT Vadodara.',
     },
   }
 }

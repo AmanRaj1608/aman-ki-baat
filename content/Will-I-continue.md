@@ -1,7 +1,9 @@
 ---
-title: "Will I continue? 😅"
+title: "Will I continue?"
 date: "July 18, 2020"
 ---
+
+Tldr: No.
 
 I want to create a corner on the internet where I can share something. I'm not the kind of person who writes a lot.
 

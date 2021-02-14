@@ -1,3 +1,5 @@
+/* Global CSS */
+
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 html,
 body {
@@ -6,131 +8,171 @@ body {
   font-weight: 400;
   line-height: 1.75;
   padding: 0px;
-  margin: 0px;
-  background-color: #1d1b38;
-  color: #f6bed6;
+  /* margin: 0px; */
+  max-width: 900px;
+  margin: auto;
+  color: rgb(255 255 255 / 88%);
+  background-color: rgb(18 17 22);
 }
-header {
-  display: block;
+a {
+  background-color: rgb(0 0 0 / 0%);
+  box-shadow: 0 1px 0 0 currentColor;
+  color: rgb(255 105 180);
+  text-decoration: none;
 }
-.header-block {
-  max-width: 672px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 28px;
-  padding-right: 28px;
-  padding-top: 56px;
+a:hover,
+a:active {
+  box-shadow: none;
 }
-.header-top {
+small {
+  font-size: smaller;
+}
+::selection {
+  color: rgb(255 255 255);
+  background-color: rgb(220 20 60);
+}
+
+/* Header nav */
+.nav {
+  margin: auto;
+  max-width: 900px;
+  padding: 60px 28px 0 28px;
+}
+/* .nav__top {
   display: flex;
+  max-width: 650px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 56px;
-}
-.header-title {
+} */
+.nav__title {
   padding: 0;
   margin: 0;
   font-family: Montserrat, sans-serif;
   line-height: 1.1;
   font-weight: 900;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 27px;
+  font-size: 50px;
+  color: rgb(255 99 71);
   cursor: pointer;
+  margin-bottom: 25px;
+  word-break: break-all;
 }
-.header-bio {
-  box-sizing: border-box;
-  min-width: 0;
+@media screen and (max-width: 430px) {
+  .nav__title {
+    font-size: 40px;
+  }
+}
+.nav__about {
+  font-size: 16px;
+}
+.nav__bio {
   display: flex;
-  margin-bottom: 56px;
   align-items: center;
 }
-a {
-  color: #eb418a;
-}
-.header-bio-image {
+.nav__bio__imgcont {
   position: relative;
   overflow: hidden;
   display: inline-block;
-  min-width: 48px;
-  height: 48px;
-  border-radius: 9999%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
   margin-right: 20px;
 }
-.bio-img {
+.nav__bio__img {
   position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
   opacity: 1;
-  transition: opacity 500ms ease 0s;
+  /* transition: opacity 500ms ease 0s; */
 }
-.main-body {
-  max-width: 672px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 28px;
-  padding-right: 28px;
-  padding-top: 56px;
-  padding-bottom: 56px;
+
+/* Top Line */
+.linerGradient {
+  background: linear-gradient(to right, rgb(80, 250, 123), rgb(21, 101, 192));
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 2px;
+  position: fixed;
+  /* transition: width 0.25s ease 0s; */
 }
+
+/* Home page section */
 main {
   display: block;
+  max-width: 900px;
+  padding: 28px;
+  margin: auto;
 }
-footer {
-  margin-top: 56px;
-  padding-top: 28px;
-}
-.blog-title {
+.home__blog__title {
   padding: 0;
   margin: 0;
-  margin-bottom: 28px;
-  font-size: 27.725793726205858px;
-  font-family: Montserrat, sans-serif;
+  font-size: 26px;
   line-height: 1.1;
   font-weight: 900;
-  margin-bottom: 7px;
+  margin: 56px 0 7px;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
+  color: rgb(32 178 170);
 }
-small {
-  font-size: smaller;
+
+.home__blog__date {
+  color: rgb(192 192 192);
+  font-weight: 900;
 }
-.blog-desc {
+.home__blog__desc {
+  font-family: Fira Sans, sans-serif;
+  font-size: large;
   padding: 0;
   margin: 0;
   margin-bottom: 28px;
+}
+.footer {
+  padding: 0 28px;
+  margin-bottom: 56px;
 }
 
 /* Blog Post */
-.post {
-  max-width: 672px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 28px;
-  padding-right: 28px;
-  padding-bottom: 56px;
-}
-.post-title {
-  padding: 0;
-  margin: 0;
-  margin-bottom: 28px;
-  font-size: 40px;
+.post__nav {
   font-family: Montserrat, sans-serif;
+  margin-top: 0px;
+  padding: 28px;
+  font-size: 27px;
+  color: rgb(255 99 71);
+  cursor: pointer;
+}
+.post {
+  padding: 0 28px;
+}
+.post__title {
+  font-family: Montserrat, sans-serif;
+  font-size: 40px;
   line-height: 1.1;
   font-weight: 900;
+  text-align: center;
+  color: rgb(32 178 170);
+  padding: 0;
+  margin: 56px 0 28px;
 }
-.post-date {
+@media screen and (max-width: 430px) {
+  .post__title {
+    font-size: 35px;
+  }
+}
+.post__date {
   padding: 0;
   margin: 0;
   margin-bottom: 28px;
-  font-size: 13.32085131842997px;
+  font-size: 13px;
   margin-top: -15px;
   margin-bottom: 28px;
+  text-align: center;
 }
+
+/* Style for ReactMarkdown */
 h1,
 h2,
 h3,
