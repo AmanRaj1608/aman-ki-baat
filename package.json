@@ -1,10 +1,12 @@
 {
   "name": "amanraj-dev-blog",
   "version": "3.0.0",
-  "private": true,
+  "description": "Aman Raj · AmanRaj1608",
+  "author": "Aman Raj <archanaamanraj@gmail.com>",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
@@ -14,5 +16,6 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-markdown": "^5.0.3"
-  }
+  },
+  "license": "MIT"
 }

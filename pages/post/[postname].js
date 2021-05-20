@@ -27,7 +27,7 @@ const Blog = ({ title, description, date, markdownBody }) => {
       </main>
 
       {/** footer */}
-      <footer style={{ paddingBottom: 60 }}>
+      <footer>
         <Link href={{ pathname: '/' }}>
           <a className="post_link">← Back to all blogs</a>
         </Link>
