@@ -6,38 +6,52 @@ import Header from '../components/Header'
 
 export default function Index({ posts, title, description, ...props }) {
   return (
-    <React.Fragment>
-
+    <div className="layoutContainer">
       <Header pageTitle={title} description={description} />
-      <div className="linerGradient"></div>
 
       <main>
-        {!posts && <div>No posts! 📝✏ </div>}
+        <div className="main__div">
+          <h5 className="main__text">
+            Hi, I'm Aman, a a third-year undergraduate in Computer Science at IIIT India.
+            I’m passionate about Blockchain, Mathematics, and Algorithms.
+            Here I write about what I find intresting.
+          </h5>
 
-        {posts &&
-          posts.map((post) => {
-            return (
-              <div key={post.slug}>
-                <Link href={{ pathname: `/post/${post.slug}` }}>
-                  <a><h2 className="home__blog__title">{post.frontmatter.title}</h2></a>
-                </Link>
-                <span>
-                  <small className="home__blog__date">{post.frontmatter.date}</small>
-                  {/*<small className="home__blog__minRead">{post.frontmatter.date}</small> */}
-                </span>
-                <p className="home__blog__desc">{post.markdownBody.substring(0, 80)}</p>
-              </div>
-            )
-          })}
+          <div>
+            <h2 className="main__title">
+              Writings
+            </h2>
+
+            <ul className="main_ul">
+              {posts &&
+                posts.map((post) => {
+                  return (
+                    <li className="main_li" key={post.slug}>
+                      <p className="main_li_date">
+                        {post.frontmatter.date}
+                      </p>
+                      <h2 className="main_li_title">
+                        {post.frontmatter.title}
+                      </h2>
+                      <p className="main_li_subheading">
+                        {post.markdownBody.substring(0, 80)}
+                      </p>
+                      <Link href={{ pathname: `/post/${post.slug}` }}>
+                        <a className="main_li_link">Read more</a>
+                      </Link>
+                    </li>
+                  )
+                })}
+            </ul>
+          </div>
+        </div>
       </main>
-
-      <hr style={{ borderBottom: '3px solid rgb(102 51 153)' }} />
 
       {/** footer */}
       <footer className="footer">
-        Created with ❤️ by Aman, © 2021
+        © 2021 by Aman Raj. All rights reserved.
       </footer>
-    </React.Fragment>
+    </div>
   )
 }
 
@@ -62,8 +76,8 @@ export async function getStaticProps() {
   return {
     props: {
       posts,
-      title: 'Home | Aman ki baat',
-      description: 'Personal Blog of Aman Raj who is an Undergraduate Engineering student at IIIT Vadodara.',
+      title: "~/blog/ by Aman Raj",
+      description: 'I learn and build stuff on internet and share my learnings.',
     },
   }
 }
