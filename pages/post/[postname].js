@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import matter from 'gray-matter';
-import ReactMarkdown from 'react-markdown';
+import Markdown from '../../components/Markdown';
 import Header from '../../components/Header';
+import { getTime } from '../../utils/getTime';
 
 const Blog = ({ title, description, date, markdownBody }) => {
   return (
@@ -14,16 +15,13 @@ const Blog = ({ title, description, date, markdownBody }) => {
         </Link>
         <h2 className="post_title">{title}</h2>
         <p className="post_date">
-          <em><strong>{date}</strong></em>
+          <em><strong>{getTime(date)}</strong></em>
         </p>
         <p className="post_desc">
-          <em>
-            This will be the subheading fetched from the blogs mdx.
-          </em>
+          <em>{description}</em>
         </p>
         <hr />
-
-        <ReactMarkdown source={markdownBody} />
+        <Markdown source={markdownBody} />
       </main>
 
       {/** footer */}
@@ -36,16 +34,15 @@ const Blog = ({ title, description, date, markdownBody }) => {
   )
 }
 
-export default Blog;
-
-export async function getStaticProps({ ...ctx }) {
-  const { postname } = ctx.params
+export async function getStaticProps({ params }) {
+  const { postname } = params;
   const content = await import(`../../content/${postname}.md`)
   const data = matter(content.default)
+
   return {
     props: {
       title: data.data.title,
-      description: data.data.title,
+      description: data.data.abstract,
       date: data.data.date,
       markdownBody: data.content,
     },
@@ -55,7 +52,7 @@ export async function getStaticProps({ ...ctx }) {
 export async function getStaticPaths() {
   const blogSlugs = ((context) => {
     const keys = context.keys()
-    const data = keys.map((key, index) => {
+    const data = keys.map((key, i) => {
       let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
       return slug
     })
@@ -63,9 +60,11 @@ export async function getStaticPaths() {
   })(require.context('../../content', true, /\.md$/))
 
   const paths = blogSlugs.map((slug) => `/post/${slug}`)
-
+  console.log(paths)
   return {
     paths,
     fallback: false,
   }
 }
+
+export default Blog;
