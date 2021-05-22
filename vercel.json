@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/github",
+      "destination": "https://github.com/AmanRaj1608"
+    },
+    {
+      "source": "/twitter",
+      "destination": "https://twitter.com/AmanRaj1608"
+    },
+    {
+      "source": "/linkedin",
+      "destination": "https://www.linkedin.com/in/amanraj1608"
+    },
+    {
+      "source": "/30min",
+      "destination": "https://calendly.com/amanraj1608/30min"
+    }
+  ]
+}

@@ -5,18 +5,20 @@
   "author": "Aman Raj <archanaamanraj@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
+    "dev": "next",
+    "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "firebase-admin": "^9.8.0",
     "gray-matter": "^4.0.2",
     "next": "10.0.7",
     "raw-loader": "^4.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-markdown": "^5.0.3",
-    "react-syntax-highlighter": "^15.4.3"
+    "react-syntax-highlighter": "^15.4.3",
+    "swr": "^0.5.6"
   },
   "license": "MIT"
 }

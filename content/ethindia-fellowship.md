@@ -130,7 +130,9 @@ I explored and learned about the ERC20 tokens and industry standard. I wrote my 
 
 ![](https://user-images.githubusercontent.com/42104907/119202453-70887900-baae-11eb-8a3f-ed7c6d94461a.png)
 
-`https://goerli.etherscan.io/tx/0xd95d32a867efdcbb0044a27f6f05edf88cb96a804360f219bb2430ce926d75f1`
+```
+https://goerli.etherscan.io/tx/0xd95d32a867efdcbb0044a27f6f05edf88cb96a804360f219bb2430ce926d75f1
+```
 
 ### 5. DIY smart contract
 

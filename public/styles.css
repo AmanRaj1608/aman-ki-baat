@@ -197,6 +197,8 @@ footer {
   margin: 1.44rem 0px;
   font-size: 1rem;
   line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
 }
 .post_desc {
   margin: 1.44rem 0px;

@@ -1,11 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import matter from 'gray-matter';
+
 import Markdown from '../../components/Markdown';
 import Header from '../../components/Header';
+import ViewCounter from '../../components/ViewCounter';
 import { getTime } from '../../utils/getTime';
 
-const Blog = ({ title, description, date, markdownBody }) => {
+const Blog = ({ title, description, date, slug, markdownBody }) => {
   return (
     <React.Fragment>
       <Header pageTitle={title} description={description} />
@@ -16,6 +18,7 @@ const Blog = ({ title, description, date, markdownBody }) => {
         <h2 className="post_title">{title}</h2>
         <p className="post_date">
           <em><strong>{getTime(date)}</strong></em>
+          <ViewCounter slug={slug} />
         </p>
         <p className="post_desc">
           <em>{description}</em>
@@ -44,6 +47,7 @@ export async function getStaticProps({ params }) {
       title: data.data.title,
       description: data.data.abstract,
       date: data.data.date,
+      slug: postname,
       markdownBody: data.content,
     },
   }
@@ -60,7 +64,6 @@ export async function getStaticPaths() {
   })(require.context('../../content', true, /\.md$/))
 
   const paths = blogSlugs.map((slug) => `/post/${slug}`)
-  console.log(paths)
   return {
     paths,
     fallback: false,

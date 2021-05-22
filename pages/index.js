@@ -13,7 +13,7 @@ export default function Index({ posts, title, description, ...props }) {
       <main>
         <div className="main__div">
           <h5 className="main__text">
-            Hi, I'm Aman, a a third-year undergraduate in Computer Science at IIIT India.
+            Hi, I'm Aman, a third-year undergraduate in Computer Science at IIIT India.
             I’m passionate about Blockchain, Mathematics, and Algorithms.
             Here I write about what I find intresting on internet.
           </h5>
