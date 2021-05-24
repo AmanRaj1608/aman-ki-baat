@@ -12,7 +12,7 @@
   "dependencies": {
     "firebase-admin": "^9.8.0",
     "gray-matter": "^4.0.2",
-    "next": "10.0.7",
+    "next": "10.2.3",
     "raw-loader": "^4.0.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
